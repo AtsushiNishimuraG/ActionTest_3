@@ -35,4 +35,4 @@ jobs:
 
       # Deploy to the Sandbox
       - name: Deploy to the Sandbox
-        run: sfdx force:source:deploy --manifest=manifest/package.xml --testlevel=RunLocalTests -u ${{ secrets.ORG_USER }}
+        run: sfdx force:source:deploy --manifest=manifest/package_toIntegration.xml --testlevel=RunLocalTests -u ${{ secrets.ORG_USER }}
