@@ -1,5 +1,5 @@
-public with sharing class MyApex {
-    public MyApex() {
-
+public class MyApex {
+    public static String MyApexGo() {
+        return 'test';
     }
 }
