@@ -7,7 +7,6 @@ on:
 jobs:
   deploy_to_sandbox:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - name: Check out code
         uses: actions/checkout@v3
