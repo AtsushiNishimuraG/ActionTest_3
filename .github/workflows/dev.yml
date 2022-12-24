@@ -33,6 +33,10 @@ jobs:
       - name: Authenticate to access the sandbox
         run: sfdx force:auth:jwt:grant --instanceurl=https://test.salesforce.com/ --jwtkeyfile ./temp/server.key --username ${{ secrets.ORG_USER }} --clientid ${{ secrets.CLIENT_ID }}
 
-      # Deploy to the Sandbox
+      # Do test the Sandbox
       - name: Deploy to the Sandbox
         run: sfdx force:source:deploy --manifest=manifest/package.xml --testlevel=RunLocalTests -u ${{ secrets.ORG_USER }} --checkonly
+
+      # Deploy to the Sandbox
+      - name: Deploy to the Sandbox
+        run: sfdx force:source:deploy --targetusername  --wait 0 --validateddeployrequestid -u ${{ secrets.ORG_USER }}
