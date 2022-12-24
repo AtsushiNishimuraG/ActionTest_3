@@ -35,4 +35,4 @@ jobs:
 
       # Deploy to the Sandbox
       - name: Deploy to the Sandbox
-        run: sfdx force:apex:test:run --testlevel RunLocalTests -u ${{ secrets.ORG_USER }} --resultformat human
+        run: sfdx force:apex:test:run -u ${{ secrets.ORG_USER }} --resultformat human
